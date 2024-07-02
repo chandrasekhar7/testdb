@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>CallCenterV2</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{a3990a69-0c73-43c2-81cf-5d9074563b70}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>CallCenterV2</RootNamespace>
+    <AssemblyName>CallCenterV2</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Departments.sql" />
+    <Build Include="dbo\Tables\CallType.sql" />
+    <Build Include="dbo\Tables\Phones.sql" />
+    <Build Include="dbo\Tables\CallPausedEvents.sql" />
+    <Build Include="dbo\Tables\Agents.sql" />
+    <Build Include="dbo\Tables\Conferences.sql" />
+    <Build Include="dbo\Tables\ReadyAgents.sql" />
+    <Build Include="dbo\Tables\Disposition.sql" />
+    <Build Include="dbo\Tables\ConferenceParticipants.sql" />
+    <Build Include="dbo\Tables\Skills.sql" />
+    <Build Include="dbo\Tables\AgentSkills.sql" />
+    <Build Include="dbo\Tables\ConferenceAgentParticipants.sql" />
+    <Build Include="dbo\Tables\AgentRecordings.sql" />
+    <Build Include="dbo\Tables\Statuses.sql" />
+    <Build Include="dbo\Tables\CallListRecordings.sql" />
+    <Build Include="dbo\Tables\DepartmentStatuses.sql" />
+    <Build Include="dbo\Tables\Voicemails.sql" />
+    <Build Include="dbo\Tables\AgentActivity.sql" />
+    <Build Include="dbo\Tables\lostvm.sql" />
+    <Build Include="dbo\Tables\DepartmentMessageExceptions.sql" />
+    <Build Include="dbo\Tables\CallList.sql" />
+    <Build Include="dbo\Tables\Transcripts.sql" />
+    <Build Include="dbo\Tables\CallStatus.sql" />
+    <Build Include="dbo\Tables\CallListItems.sql" />
+    <Build Include="dbo\Tables\zCalls.sql" />
+    <Build Include="dbo\Tables\CallListSkills.sql" />
+    <Build Include="dbo\Tables\zAgentCalls.sql" />
+    <Build Include="dbo\Tables\Calls.sql" />
+    <Build Include="dbo\Tables\CallSkills.sql" />
+    <Build Include="dbo\Tables\Directories.sql" />
+    <Build Include="dbo\Tables\zConferences.sql" />
+    <Build Include="dbo\Tables\FailedCalls.sql" />
+    <Build Include="dbo\Tables\LineTypes.sql" />
+    <Build Include="dbo\Tables\SipCodes.sql" />
+    <Build Include="dbo\Tables\AgentCalls.sql" />
+    <Build Include="dbo\Tables\Languages.sql" />
+    <Build Include="dbo\Tables\SkillSorts.sql" />
+    <Build Include="dbo\Tables\Recordings.sql" />
+    <Build Include="dbo\Tables\DepartmentMessages.sql" />
+    <Build Include="dbo\Tables\Voicemails_CustomerClassOverride.sql" />
+    <Build Include="Security\SQLArcExtensionUserRole.sql" />
+    <Build Include="Security\NT AUTHORITY_SYSTEM.sql" />
+    <Build Include="Security\NETPAYADVANCE_Database_Live_Readonly.sql" />
+    <Build Include="Security\ConsoleApps.sql" />
+    <Build Include="Security\SVC_Analytics.sql" />
+    <Build Include="Security\NETPAYADVANCE_Database_Live.sql" />
+    <Build Include="Security\NETPAYADVANCE_BriceLohman.sql" />
+    <Build Include="Security\NETPAYADVANCE_StephenJehner.sql" />
+    <Build Include="Security\NETPAYADVANCE_SVC_NPASANDSQL_.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Functions\SecondsToTime.sql" />
+    <Build Include="dbo\Functions\killme_match_agent_client_and_date_to_call.sql" />
+    <Build Include="dbo\Stored Procedures\GetCallStatuses.sql" />
+    <Build Include="dbo\Stored Procedures\GetDepartment.sql" />
+    <Build Include="dbo\Stored Procedures\GetDepartmentHours.sql" />
+    <Build Include="dbo\Stored Procedures\GetDepartmentMessageExceptions.sql" />
+    <Build Include="dbo\Stored Procedures\GetDepartmentMessages.sql" />
+    <Build Include="dbo\Stored Procedures\GetDirectory.sql" />
+    <Build Include="dbo\Stored Procedures\GetPendingPools.sql" />
+    <Build Include="dbo\Stored Procedures\GetSkills.sql" />
+    <Build Include="dbo\Stored Procedures\InitDepartments.sql" />
+    <Build Include="dbo\Stored Procedures\NewAgentActivity.sql" />
+    <Build Include="dbo\Stored Procedures\NewRecording.sql" />
+    <Build Include="dbo\Stored Procedures\NewVoiceMail.sql" />
+    <Build Include="dbo\Stored Procedures\AddCallListSkillFromAgentID.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateCallListItem.sql" />
+    <Build Include="dbo\Stored Procedures\InitCallList.sql" />
+    <Build Include="dbo\Stored Procedures\GetCallLists.sql" />
+    <Build Include="dbo\Stored Procedures\ZInitDepartments.sql" />
+    <Build Include="dbo\Stored Procedures\CompleteConference.sql" />
+    <Build Include="dbo\Stored Procedures\AddConferenceParticipant.sql" />
+    <Build Include="dbo\Stored Procedures\AddAgentConferenceParticipant.sql" />
+    <Build Include="dbo\Stored Procedures\GetCallTypes.sql" />
+    <Build Include="dbo\Stored Procedures\CallPausedEventsAdd.sql" />
+    <Build Include="dbo\Stored Procedures\CallPausedEventsUpdate.sql" />
+    <Build Include="dbo\Stored Procedures\ArchiveNPECalls.sql" />
+    <Build Include="dbo\Stored Procedures\Reporting_CallListCompletionReport.sql" />
+    <Build Include="dbo\Stored Procedures\Reporting_AgentNonYakStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Reporting_AgentStatus.sql" />
+    <Build Include="dbo\Stored Procedures\Reporting_CallSkills.sql" />
+    <Build Include="dbo\Stored Procedures\DeleteLegacyCallRecordings.sql" />
+    <Build Include="dbo\Stored Procedures\ImportCalls.sql" />
+    <Build Include="dbo\Stored Procedures\AutoNumberRotation.sql" />
+    <Build Include="dbo\Stored Procedures\Reporting_DailyCallListReport.sql" />
+    <Build Include="dbo\Stored Procedures\ImportConferences.sql" />
+    <Build Include="dbo\Stored Procedures\YakLogError.sql" />
+    <Build Include="dbo\Stored Procedures\FindVoicemailMatch.sql" />
+    <Build Include="dbo\Stored Procedures\FindRecordingMatch.sql" />
+    <Build Include="dbo\Stored Procedures\NewCall.sql" />
+    <Build Include="dbo\Stored Procedures\AddCallSkill.sql" />
+    <Build Include="dbo\Stored Procedures\CompleteCall.sql" />
+    <Build Include="dbo\Stored Procedures\UpdateCallRPC.sql" />
+    <Build Include="dbo\Stored Procedures\CallListValidate.sql" />
+    <Build Include="dbo\Stored Procedures\CompletedAgentCall.sql" />
+    <Build Include="dbo\Stored Procedures\GetAgents.sql" />
+    <Build Include="dbo\User Defined Types\CallImport.sql" />
+    <Build Include="dbo\User Defined Types\AgentCallImport.sql" />
+    <Build Include="dbo\User Defined Types\ConferenceImport.sql" />
+    <Build Include="dbo\User Defined Types\ReferralTransaction.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="CallCenterV2_PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PreDeploy Include="CallCenterV2_PreDeployment.sql" />
+  </ItemGroup>
+</Project>

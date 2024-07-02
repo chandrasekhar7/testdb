@@ -1,0 +1,2 @@
+﻿CREATE USER [NETPAYADVANCE\Database_Live] FOR LOGIN [NETPAYADVANCE\Database_Live];
+

@@ -1,0 +1,2 @@
+﻿CREATE USER [ConsoleApps] WITHOUT LOGIN;
+
