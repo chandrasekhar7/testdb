@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[LineTypes] (
+    [TypeID] INT          IDENTITY (1, 1) NOT NULL,
+    [Name]   VARCHAR (32) NOT NULL,
+    CONSTRAINT [PK__LineType__516F03959CF3E82F] PRIMARY KEY CLUSTERED ([TypeID] ASC)
+);
+
