@@ -12,12 +12,11 @@ jobs:
       - name: msbuild setup
         uses: microsoft/setup-msbuild@v2 
 
-      - name: build
+      - name: Build
         run: |
-
-           powershell -ExecutionPolicy Bypass -Command "dotnet build ${{ github.workspace }}/CallCenterV2.sqlproj -c Release"
-
-           dir
+          dotnet restore ${{ github.workspace }}/CallCenterV2.sqlproj
+          dotnet build ${{ github.workspace }}/CallCenterV2.sqlproj -c Release
+        shell: cmd
       - name: upload
         uses: actions/upload-artifact@v4.3.3
         with:
