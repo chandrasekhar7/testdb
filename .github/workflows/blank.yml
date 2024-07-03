@@ -12,8 +12,7 @@ jobs:
       - name: msbuild setup
         uses: microsoft/setup-msbuild@v2 
       - name: Set PowerShell Execution Policy
-        run: |
-          Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
+        run:  powershell -Command "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force"
       - name: build
         run: |
            #nuget restore ${{github.workspace}}\CallCenterV2.sqlproj
