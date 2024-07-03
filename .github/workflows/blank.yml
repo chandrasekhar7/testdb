@@ -1,0 +1,23 @@
+name: sonar scan and build
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4.1.7
+      - name: msbuild setup
+        uses: microsoft/setup-msbuild@v2 
+      - name: build
+        run: |
+           nuget restore ${{github.workspace}}\CallCenterV2.sqlproj
+           msbuild /t:Build /p:Configuration=Release
+           dir
+      - name: upload
+        uses: actions/upload-artifact@v4.3.3
+        with:
+           name: NPADB
+           path: ${{ github.workspace }}
