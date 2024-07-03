@@ -13,6 +13,7 @@ jobs:
         uses: microsoft/setup-msbuild@v2 
       - name: build
         run: |
+           Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
            #nuget restore ${{github.workspace}}\CallCenterV2.sqlproj
            dotnet build ${{ github.workspace }}/CallCenterV2.sqlproj -c Release
            dir
