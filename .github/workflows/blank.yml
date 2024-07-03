@@ -14,9 +14,9 @@ jobs:
 
       - name: build
         run: |
-           #nuget restore ${{github.workspace}}\CallCenterV2.sqlproj
+
            powershell -ExecutionPolicy Bypass -Command "dotnet build ${{ github.workspace }}/CallCenterV2.sqlproj -c Release"
-           #dotnet build ${{ github.workspace }}/CallCenterV2.sqlproj -c Release
+
            dir
       - name: upload
         uses: actions/upload-artifact@v4.3.3
