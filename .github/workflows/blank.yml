@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4.1.7
-      - name: msbuild setup
-        uses: microsoft/setup-msbuild@v2 
+      #- name: msbuild setup
+       # uses: microsoft/setup-msbuild@v2 
 
       - name: Build
         run: |
